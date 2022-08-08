@@ -1,0 +1,5 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs></defs>
+  <path style="fill: rgb(173, 216, 230); stroke: rgb(173, 216, 230);" d="M 0 0 L 300 0 L 300 300"></path>
+  <path style="fill: rgb(219, 138, 138); stroke: rgb(219, 138, 138);" d="M 0 0 L 0 300 L 300 300"></path>
+</svg>

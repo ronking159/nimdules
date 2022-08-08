@@ -1,0 +1,125 @@
+:root {
+    --tile-length: 0;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Calibri;
+}
+
+button {
+    --background-color: #c3c3c3;
+    background-color: var(--background-color);
+    padding: .5em 1em;
+    color: black;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    --border-size: 2px;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border: var(--border-size) solid var(--background-color);
+    transition: top, bottom, left, right, 100ms ease-in-out
+}
+
+button:hover::before,
+button:focus::before {
+    top: calc(var(--border-size) * -2);
+    bottom: calc(var(--border-size) * -2);
+    left: calc(var(--border-size) * -2);
+    right: calc(var(--border-size) * -2);
+}
+
+button:active::before {
+    border:var(--border-size) solid black;
+}
+
+#joinoverlay {
+    width: 100%; height: 100%;
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+}
+
+#jointxt {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+#joinbtn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, 100%);
+    display: none;
+}
+
+#readybtn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, 100%);
+    display: none;
+    background-color: red;
+}
+
+#readybtn::before {
+    border-color: red;
+}
+
+#readybtn.ready {
+    background-color: lightgreen;
+}
+
+#readybtn.ready::before {
+    border-color: lightgreen;
+}
+
+#timer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    z-index: 1;
+}
+
+#gamediv {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: min(90vw, 90vh);
+    aspect-ratio: 16/9;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightgray;
+}
+
+.row {
+    width: 100%; height: 25%;
+    margin: auto;
+    display: flex;
+}
+
+.row > div {
+    width: 13%; height: 100%;
+    margin: auto;
+    display: flex;
+    grid-gap: 6%;
+}
+
+.row > div > div {
+    display: inline-block;
+    width: 100%; height: 100%;
+    background-color: gray;
+}
